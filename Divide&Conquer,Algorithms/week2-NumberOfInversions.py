@@ -36,7 +36,7 @@ def MergeAndCountSplitInv(B, C):
     out_arr = [None]*len(B) + [None]*len(C)
 
     for k in range(len(out_arr)):
-        # Copy B
+        # Check B
         if i < len(B):       # B non-empty
             if j >= len(C):  # C is empty
                 out_arr[k] = B[i]
