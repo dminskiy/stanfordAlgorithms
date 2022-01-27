@@ -1,17 +1,5 @@
 import time
-import os
-
-DATA_PATH = '/home/dm00314/PycharmProjects/stanfordAlgorithms/Divide&Conquer,Algorithms/data'
-
-def read_file_into_array(filename):
-    filepath = os.path.join(DATA_PATH, filename)
-    if os.path.exists(filepath):
-        file = open(filepath, 'r')
-        lines = file.readlines()
-        arr = [int(lines[i]) for i in range(len(lines))]
-        return arr
-    else:
-        return None
+from utils import read_file_into_array
 
 
 def SortAndCount(arr):
@@ -41,10 +29,10 @@ def MergeAndCountSplitInv(B, C):
             if j >= len(C):  # C is empty
                 out_arr[k] = B[i]
                 i += 1
-            elif B[i] <= C[j]:  # C non-empty, B non-empty -> copy is B[i] <= C[j]
+            elif B[i] <= C[j]:  # C non-empty, B non-empty -> copy B if B[i] <= C[j]
                 out_arr[k] = B[i]
                 i += 1
-            else:  # if B non-empty, C non empty and B[i] > C[j]
+            else:  # if B non-empty, C non empty -> copy C if B[i] > C[j]
                 out_arr[k] = C[j]
                 inversion_count += len(B) - i
                 j += 1
@@ -58,7 +46,7 @@ def MergeAndCountSplitInv(B, C):
 
 
 if __name__ == '__main__':
-    print('Let us count the number of inversions!')
+    print('Let us count the number of MergeSort inversions!')
     x = input("Enter filename with an integer array (should be in /data) : ")  # default file: IntegerArray.txt
 
     arr = read_file_into_array(x)
