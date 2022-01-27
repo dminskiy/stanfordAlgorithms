@@ -94,7 +94,6 @@ if __name__ == '__main__':
     print('Let us count the number of QuickSort comparisons!')
 
     arr = read_file_into_array(filename='QuickSort.txt')
-    #arr = [3,8,2,5,1,4,7,6]
 
     qs_start = time.time()
 
@@ -102,5 +101,4 @@ if __name__ == '__main__':
 
     print(f'Calculating the number of comparisons.\nResult: {comp}'
           f'\nExecution time: {round(time.time()-qs_start, 5)}s')
-
     #print(f'Sorted array: {sorted}')

@@ -47,11 +47,8 @@ def MergeAndCountSplitInv(B, C):
 
 if __name__ == '__main__':
     print('Let us count the number of MergeSort inversions!')
-    x = input("Enter filename with an integer array (should be in /data) : ")  # default file: IntegerArray.txt
 
-    arr = read_file_into_array(x)
-    if arr is None:
-        raise(FileNotFoundError(f'Could not read array from: {x}'))
+    arr = read_file_into_array('IntegerArray.txt')
 
     s = time.time()
     sorted_arr, num_inversions = SortAndCount(arr)
